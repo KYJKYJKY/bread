@@ -1,0 +1,344 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*전체 선택자*/
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; display: block; color: #111;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+header, section, footer{
+    width: 100%;
+    float: left;
+}
+header, section, footer, div{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+img{width: 100%;}
+.center_box{
+    width: 1300px;
+    margin:0 auto;
+}
+header{
+    height: 128px;
+}
+header .up_area{
+    height: 40px;
+    width: 100%;
+    background-color: #4d3730;
+}
+header .up_area .right_menu{
+    float: right;}
+header .up_area .right_menu ul li{
+    float: left;
+}
+header .up_area .right_menu ul li a{
+    padding:10px 5px;
+    font-size: 14px;
+    color: #e5d3bb;
+}
+header .up_area .right_menu ul li a:after{
+    content: "|";
+    float: right;
+    color: #e5d3bb;
+    margin-left: 11px;
+}
+/* 마지막에서 두번째 li를 가리킴 */
+header .up_area .right_menu ul li:last-child a:after{content: "";}
+
+
+/* 로고는 왼쪽에 배치 */
+header .down_area .logo{
+    float: left;
+    width: 120px;
+    margin-top: 10px;
+    
+}
+/* 내비게이션(메뉴)은 오른쪽에 배치 */
+header .down_area nav{
+    float: right;
+    z-index: 11;
+    position: relative;
+    height: 90px;
+}
+/* 주메뉴 */
+header .down_area nav> ul> li{
+    float: left;
+    padding: 20px 0;
+    height: 50px;
+}
+header .down_area nav>ul>li>a {
+    padding: 10px 0;
+    margin-right: 90px;
+    padding-bottom: 29px;
+    font-size: 20px;
+    font-weight: bold;
+    /* 자식객체 :after의 위치 설정할 때 기준이 a태그임 */
+    position: relative;
+    /* 마우스 오버할 때 밑줄이 글자길이만큼만 그려짐 */
+    display: inline-block;
+    
+}
+header .down_area nav>ul>li>a:after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #4d3730;
+    left: 50%;
+    bottom: 20px;
+    transition: all 0.5s;
+}
+header .down_area nav>ul>li>a:hover:after{
+    width: 100%;
+    left:0
+}
+/* 서브메뉴 */
+header .down_area nav .sub{
+    position: absolute;
+    /* display: none; */
+    background-color: white;
+    border-top: 2px solid #4d3730;
+    width: 150px;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    /* 애니메이션 */
+    transition: all 1s;
+}
+header .down_area nav .sub li a{
+    padding: 12px;
+    font-size: 16px;
+    border-bottom:  1px solid #ddd;
+}
+header .down_area nav .sub li a:hover {
+    background-color: #efefef;
+}
+header .down_area nav>ul>li:hover .sub{
+    /* display: block; */
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+section{
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+section#visual {
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+section#banner .movie{
+    width: 675px;
+    height: 377px;
+    margin-right: 40px; /*오른쪽여백*/
+    float: left;
+    background-color: #111;
+}
+section#banner .banner_right{
+    width: 585px;
+    height: 377px;
+    float: left;
+}
+section#banner .banner_right ul li{
+    float: left;
+    width: 280px;
+    height: 176px;
+    /* 자식객체의 위치를 설정할 때 부모객체인 li기준으로 위치 잡기 위해 */
+    position: relative;
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    overflow: hidden;
+}
+section#banner .banner_right ul li:first-child{
+    background-color: #e5d4ba;
+    margin-right: 25px; /*오른쪽여백*/
+    margin-bottom: 25px; /*아래쪽여백*/
+}
+section#banner .banner_right ul li:nth-child(2){
+    background-color: #865c3d;
+    margin-bottom: 25px; /*아래쪽여백*/
+}
+section#banner .banner_right ul li:nth-child(3){
+    background-color: #9a8e7f;
+    margin-right: 25px; /*오른쪽여백*/
+}
+
+section#banner .banner_right ul li .des{
+    position: absolute;
+    color: #fff;
+    padding: 20px;
+    /* padding을 넣어도 .des의 크기는 고정 */
+    box-sizing: border-box;
+}
+section#banner .banner_right ul li .des1{
+    position: absolute;
+    color: #4c3e34;
+    padding: 20px;
+    /* padding을 넣어도 .des의 크기는 고정 */
+    box-sizing: border-box;
+}
+section#banner .banner_right ul li .des h3{
+    font-size: 24px;
+}
+section#banner .banner_right ul li .des p{
+    font-size: 14px;
+}
+section#banner .banner_right ul li .des img{
+    width: 40px;
+    margin-top: 20px;
+}
+section#banner .banner_right ul li .des1 h3{
+    font-size: 24px;
+}
+section#banner .banner_right ul li .des1 p{
+    font-size: 14px;
+}
+section#banner .banner_right ul li .des1 img{
+    width: 40px;
+    margin-top: 20px;
+}
+section#banner .banner_right ul li .pic1{
+    position: absolute;
+    width: 200px;
+    margin-left: 115px;
+    margin-top: 15px;
+}
+section#banner .banner_right ul li .pic2{
+    position: absolute;
+    width: 250px;
+    margin-left: 80px;
+    margin-top: 55px;
+}
+section#banner .banner_right ul li .pic3{
+    position: absolute;
+    width: 180px;
+    margin-left: 100px;
+}
+section#banner .banner_right ul li .pic4{
+    position: absolute;
+}
+section#list {
+    background-image: url(../img/best_background.png);
+    /* 배경이미지를 고정시킴 */
+    background-attachment: fixed;
+    height: 600px;
+}
+section#list h1 {text-align: center; font-size: 35px;
+    color: #ede6db; 
+    font-family: 'GangwonEduPowerExtraBoldA';}
+
+section#list .list_box{
+    margin-top: 60px;
+}
+section#list .list_box ul li{
+    float: left;
+    margin-right: 50px;
+    width: 220px;
+}
+/* 마지막 li영역의 오른쪽 여백 없앰 */
+section#list .list_box ul li:last-child{
+    margin-right: 0;
+}
+section#list .list_box ul li .photo{
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    text-align: center;
+}
+/* photo안의 이미지 조금 커지는 애니메이션 */
+section#list .list_box ul li .photo img{
+    width: 160px;
+    transform: scale(1,1);
+    transition: all 0.5s;
+    margin-top: 50px;
+}
+section#list .list_box ul li:hover .photo img{
+    transform: scale(1.1,1.1);
+}
+section#list .list_box ul li p{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 40px;
+    color: #fff;
+    border: 1.5px solid #fff;
+    margin:0 auto;
+    margin-top: 20px;
+}
+section#event .e_left{
+    float: left;
+    width: 830px;
+    height: 550px;
+    margin-right: 26px;
+    text-align: center;
+}
+section#event .e_right{
+    float: left;
+}
+section#event .e_right div{
+    width: 444px;
+    height: 262px;
+}
+section#event .e_right .event1{    
+    margin-bottom: 23px;
+}
+section#notice .news{
+    width: 48%;
+    float:left;
+}
+section#notice .title img{
+    width: 30px;
+    float: right;
+    
+}
+section#notice .con1 ul li span{
+    width: 30px;
+    float: right;
+    
+}
+section#notice .news .con1 ul li p{ margin-top: 10px; }
+hr{width: 100%; position: relative;}
+section#notice .recruit{width: 48%;
+    float:right;}
+section#notice .recruit .con2{
+    width: 630px;
+    height: 225px;
+    background-color: #f1e8dd;
+}
+section#notice .recruit .con2 p{padding: 55px 40px;
+font-size: 25px; font-weight: bold; color: #8c7363;}
+section#notice .recruit .con2 span{width: 400px; position: absolute;margin-left: 300px;
+background-color: aqua;}
+
+footer{width: 100%; background-color: #f8f8f8;}
+footer .center_box {width: 1100px; margin: 0 auto;}
+footer .center_box .f_logo{
+    float: left;
+    margin: 10px 0;
+}
+footer .center_box address{
+    float: left;
+    font-size: 12px;
+    color: #848484;
+    margin: 10px;
+    margin-left: 20px;
+    font-style: normal;
+}
+footer .center_box .info{
+    float: right; padding-top: 24px;
+}
